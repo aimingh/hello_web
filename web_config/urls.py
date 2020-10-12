@@ -23,4 +23,5 @@ urlpatterns = [
     path('hello/responsewithhtml/', homev.responsewithhtml, name="responsewithhtml_home"),
     path('hello/organization/', homev.organization, name="organization_home"),
     path('hello/form/', homev.form, name="form_home"),
+    path('hello/template/', homev.template, name="template_home"),
 ]

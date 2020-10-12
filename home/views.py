@@ -25,3 +25,6 @@ def organization(request):
 
 def form(request):
     return render(request, 'home/requestform.html')
+
+def template(request):
+    return render(request, 'home/template.html')
