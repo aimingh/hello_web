@@ -14,3 +14,11 @@ def responsewithhtml(request):
         'second': 'Cho'
     }
     return render(request, 'home/responsewithhtml.html', context=data)
+
+def organization(request):
+    data = {
+        'name': 'Junhee Cho',
+        'Tel': '010-000-0000',
+        'address': 'Seoul, Republic of korea'
+    }
+    return render(request, 'home/organization.html', context=data)
