@@ -6,3 +6,11 @@ from django.http import HttpResponse
 
 def hello(request):
     return HttpResponse("<h1>Hello Django</h1><p>content...</p>")
+
+
+def responsewithhtml(request):
+    data = {
+        'first': 'Junhee',
+        'second': 'Cho'
+    }
+    return render(request, 'home/responsewithhtml.html', context=data)
