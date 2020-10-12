@@ -9,9 +9,13 @@ def hello(request):
 
 
 def responsewithhtml(request):
+    # data = {
+    #     'first': 'Junhee',
+    #     'second': 'Cho'
+    # }
     data = {
-        'first': 'Junhee',
-        'second': 'Cho'
+        'first': request.GET['first'],
+        'second': request.GET['second']
     }
     return render(request, 'home/responsewithhtml.html', context=data)
 
@@ -22,3 +26,6 @@ def organization(request):
         'address': 'Seoul, Republic of korea'
     }
     return render(request, 'home/organization.html', context=data)
+
+def form(request):
+    return render(request, 'home/requestform.html')
