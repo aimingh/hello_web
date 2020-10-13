@@ -16,10 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from home import views as homev
+from board import views as boardv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homev.home, name="home_home"),
+    path('board/listwithmongo/', boardv.listwithmongo, name="listwithmongo_boardv"),
     
     path('hello/', homev.hello, name="hello_home"),
     path('hello/responsewithhtml/', homev.responsewithhtml, name="responsewithhtml_home"),
