@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from pymongo import MongoClient
 import datetime
 
-def scrapping_worknet(max_page, jobquery='AI'):
+def scrapping_worknet(max_page, keyword='AI'):
     # 드라이버 옵션
     options = webdriver.ChromeOptions()
     options.add_argument('headless')    # headless mode
@@ -17,8 +17,8 @@ def scrapping_worknet(max_page, jobquery='AI'):
 
     # 검색 및 더보기
     search_box = driver.find_element(By.NAME, 'topQuery')
-    search_box.send_keys(jobquery)
-    print(f'search: {jobquery}')
+    search_box.send_keys(keyword)
+    print(f'keyword: {keyword}')
     driver.find_element(By.CLASS_NAME, 'btn-search').click()
     btn1 = driver.find_elements(By.XPATH, '//*[@id="contents"]/div/div[1]/div[1]/div[2]/div[3]/a')
     btn1[0].click()
