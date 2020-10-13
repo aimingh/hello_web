@@ -1,7 +1,6 @@
 from pymongo import MongoClient
 import requests
 from bs4 import BeautifulSoup
-import sqlite3
 import datetime
 
 # 사용할 데이터 수집
