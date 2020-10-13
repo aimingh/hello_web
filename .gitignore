@@ -1,2 +1,2 @@
 */__pycache__/*.pyc
-home/migrations/__pycache__/*.pyc
+*/migrations/__pycache__/*.pyc
