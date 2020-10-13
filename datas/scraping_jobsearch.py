@@ -1,9 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from pymongo import MongoClient
+import requests
+from bs4 import BeautifulSoup
 import datetime
 
-def scrapping_worknet(max_page, keyword='AI'):
+def scrapping_worknet(max_page=10, keyword='AI'):
     # 드라이버 옵션
     options = webdriver.ChromeOptions()
     options.add_argument('headless')    # headless mode
@@ -49,6 +51,25 @@ def scrapping_worknet(max_page, keyword='AI'):
                     page = page + 1
                     driver.find_element(By.XPATH, f'//*[@id="contents"]/div/div[1]/div[1]/nav/a[{page_num}]').click()
 
+def scrapping_jobkorea(max_page=10, keyword='AI'):
+    for page in range(max_page):
+        res = requests.get(f'http://www.jobkorea.co.kr/Search/?stext={keyword}&tabType=recruit&Page_No={str(page)}')
+        if res.status_code == 200:
+            soup = BeautifulSoup(res.content, 'lxml')
+            links = soup.find_all('a', class_='title dev_view')
+            companies = soup.find_all('a', class_='name dev_view')
+            data = []
+            for link, company in zip(links, companies):
+                title = link.get_text()
+                link = 'http://www.jobkorea.co.kr' + link.get('href')
+                company_name = company.get_text()
+                dic = {"title": title, "link": link, "company":company_name, "create_date": datetime.datetime.now()}
+                data.append(dic)
+
+            with MongoClient('mongodb://127.0.0.1:27017/')  as client:
+                mydb = client.mydb
+                res = mydb.jobkorea.insert_many(data)
+
 if __name__ == "__main__":
-    max_page = 10
-    scrapping_worknet(max_page)
+    scrapping_jobkorea()
+    scrapping_worknet()

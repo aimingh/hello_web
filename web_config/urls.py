@@ -23,7 +23,9 @@ urlpatterns = [
     path('', homev.home, name="home_home"),
     path('board/listwithmongo/', boardv.listwithmongo, name="listwithmongo_boardv"),
     path('board/listofworknet/', boardv.listofworknet, name="listofworknet_boardv"),
+    path('board/listofjobkorea/', boardv.listofjobkorea, name="listofjobkorea_boardv"),
     path('board/scrapworknet/', boardv.scrapworknet, name="scrapworknet"),
+    path('board/scrapjobkorea/', boardv.scrapjobkorea, name="scrapjobkorea"),
     
     path('hello/', homev.hello, name="hello_home"),
     path('hello/responsewithhtml/', homev.responsewithhtml, name="responsewithhtml_home"),
