@@ -19,6 +19,8 @@ from home import views as homev
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', homev.home, name="home_home"),
+    
     path('hello/', homev.hello, name="hello_home"),
     path('hello/responsewithhtml/', homev.responsewithhtml, name="responsewithhtml_home"),
     path('hello/organization/', homev.organization, name="organization_home"),
