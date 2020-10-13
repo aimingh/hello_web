@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table table-striped">
+        <tr>
+            <th>title</th>
+            <th>company</th>
+        </tr>
+        {% for row in page_obj.0 %}
+        <tr>
+            <td><a href="{{row.link}}">{{row.title}}</a></td>
+            <td>{{row.company}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

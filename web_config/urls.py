@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', homev.home, name="home_home"),
     path('board/listwithmongo/', boardv.listwithmongo, name="listwithmongo_boardv"),
+    path('board/listofworknet/', boardv.listofworknet, name="listofworknet_boardv"),
     
     path('hello/', homev.hello, name="hello_home"),
     path('hello/responsewithhtml/', homev.responsewithhtml, name="responsewithhtml_home"),
