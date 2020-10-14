@@ -2,18 +2,13 @@
 web scrapping, DB 저장, Web framework 학습 목적 프로젝트
 
 ## 적용 기술과 사용법
-### * Web Server
-
+* Web Server
     * Django
     * CSS
     * HTML
-
-### * Database
-
+* Database
     * MongoDB
-
-### * Web scrapping
-
+* Web scrapping
     * BeautifulSoup
     * selenium
 
