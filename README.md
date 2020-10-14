@@ -1,4 +1,4 @@
-# Hello Django - Junhee
+# Hello Web - Junhee
 web scrapping, DB 저장, Web framework 학습 목적 프로젝트
 
 ## 적용 기술
