@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from home import views as homev
 from board import views as boardv
+from maps import views as mapsv
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +29,8 @@ urlpatterns = [
     path('board/listofjobkorea/', boardv.listofjobkorea, name="listofjobkorea_boardv"),
     path('board/scrapworknet/', boardv.scrapworknet, name="scrapworknet"),
     path('board/scrapjobkorea/', boardv.scrapjobkorea, name="scrapjobkorea"),
+
+    path('maps/showmapwithfolium/', mapsv.showmapwithfolium, name="showmapwithfolium_mapsv"),
     
     path('hello/', homev.hello, name="hello_home"),
     path('hello/responsewithhtml/', homev.responsewithhtml, name="responsewithhtml_home"),
