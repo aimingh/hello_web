@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+<div class="w3-row-padding w3-light-grey w3-padding-32 w3-container">
     <div class="w3-content">
         <h1 class="w3-margin w3-jumbo">Worknet list</h1>
         <p class="w3-xlarge">Worknet scrapping using selenium</p>
@@ -21,22 +21,26 @@
         </form>
     </div>
 </div>
-
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-    <div class="w3-content">
+    <div class="container">
         <table class="table table-striped">
             <colgroup><col width="*%"><col width="30%"></colgroup>
-            <tr class="w3-red w3-padding-small">
-                <th>title</th>
-                <th>company</th>
-            </tr>
-            {% for row in page_obj.0 %}
-            <tr class="w3-padding-small">
-                <td><a href="{{row.link}}">{{row.title}}</a></td>
-                <td>{{row.company}}</td>
-            </tr>
-            {% endfor %}
+            <thead class="thead-dark">
+                <tr class="w3-red w3-padding-small">
+                    <th>title</th>
+                    <th>company</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in page_obj.0 %}
+                <tr class="w3-padding-small">
+                    <td><a href="{{row.link}}">{{row.title}}</a></td>
+                    <td>{{row.company}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
+        {% include "paginator.html" %}
     </div>
 </div>
 
